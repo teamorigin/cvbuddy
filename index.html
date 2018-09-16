@@ -12,24 +12,21 @@
 </head>
 
 <body ng-app="" ng-init="u_full_name='John Doe'">
-        <div class="char-back">
-                <div class="eye left-eye"></div>
-                <div class="eye right-eye"></div>
-            </div>
+    <div class="char-back">
+        <div class="eye left-eye"></div>
+        <div class="eye right-eye"></div>
+    </div>
     <nav class="indigo">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo center" id="logo-container">CVBuddy</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <a class="waves-effect btn modal-trigger white black-text pulse" href="#themeModal">Themes</a>
-                <a class="waves-effect btn modal-trigger white black-text" href="#aboutModal">About</a>
-            </ul>
         </div>
     </nav>
-    <ul class="sidenav indigo" id="mobile-demo">
-        <li><a class="modal-trigger white-text" href="#themeModal">Themes</a></li>
-        <li><a class="modal-trigger white-text" href="#aboutModal">About</a></li>
-    </ul>
+
+    <div class="fixed-action-btn print-btn" onclick="printPages('printable')">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">print</i>
+        </a>
+    </div>
     <div class="section">
         <div class="row">
             <div class="col s4">
@@ -169,4 +166,5 @@
 <script src="https://rawgit.com/lpsBetty/angular-croppie/master/angular-croppie.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/basic.js"></script>
+
 </html>
