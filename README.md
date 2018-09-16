@@ -1,5 +1,5 @@
 
-   ![logo](https://github.com/hirushka/ABC/blob/master/image/pp.jpg)
+   ![logo](https://teamorigin.github.io/cvbuddy/img/logo.png)
 
 # What is CV Buddy?
  * This repository contains about the project of **Team Origin** named *CV Buddy* which can creates curriculum vitaes by getting information from the user.
@@ -30,5 +30,6 @@
 
 # Let's meet team members
 
-  @ hirushka/cc
-  
+  @hirushka
+  @Yasiru-kavishka
+  @Nuwan94
