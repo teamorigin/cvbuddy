@@ -5,6 +5,11 @@ angular.module('myApp', ['angularCroppie']).controller('mainCtrl', function ($sc
     $scope.cropped = {
         image: 'img/user.png'
     };
+
+    $scope.imagestyle = {
+        "background-image": "url({{cropped.image}})"
+    }
+
     
     $('#inputUploadProfile').on('change', function () {
         var input = this;
