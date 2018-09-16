@@ -52,6 +52,7 @@ body {
   background-size: 423px 432px;
   transform-box: fill-box;
   transform: scale(0.35) translate(400px, 400px);
+  z-index: 100;
 }
 
 .eye {
