@@ -1,0 +1,123 @@
+@font-face {
+font-family: Righteous;
+src:url("../fonts/Righteous-Regular.ttf");
+}
+@font-face {
+font-family: 'Material Icons';
+font-style: normal;
+font-weight: 400;
+src: url(../fonts/material-fonts.woff2) format('woff2');
+}
+body{
+  cursor: default;
+}
+.material-icons {
+font-family: 'Material Icons';
+font-weight: normal;
+font-style: normal;
+font-size: 24px;
+line-height: 1;
+letter-spacing: normal;
+text-transform: none;
+display: inline-block;
+white-space: nowrap;
+word-wrap: normal;
+direction: ltr;
+-moz-font-feature-settings: 'liga';
+-moz-osx-font-smoothing: grayscale;
+}
+#logo-container{
+font-family:'Righteous','Arial',sans-serif;
+font-size: 3em;
+}
+
+/* Buddy Assistant */
+.char-back{
+width: 423px;
+height: 432px;
+background: url("../img/char.png") no-repeat;
+position: fixed;
+bottom: 10px;
+right: 10px;
+background-size: 423px 432px;
+transform-box: fill-box;
+transform: scale(0.35) translate(400px,400px);
+}
+.eye{
+position: absolute;
+-webkit-animation-name: eyeaniamtion; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+-webkit-animation-iteration-count:infinite;
+animation-name: eyeaniamtion;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+}
+.left-eye{
+width: 13px;
+height: 22px;
+background: url("../img/left.png") no-repeat;
+background-size: 13px 22px;
+left: 140px;
+top: 170px;
+}
+.right-eye{
+width: 14px;
+height: 24px;
+background: url("../img/right.png") no-repeat;
+background-size: 14px 24px;
+left: 230px;
+top: 170px;
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes eyeaniamtion {
+0% {margin-left: 0;}
+50% {margin-left: 10px}
+100% {margin-left: 0px;}
+}
+/* Standard syntax */
+@keyframes eyeaniamtion {
+0% {margin-left: 0;}
+50% {margin-left: 10px;}
+100% {margin-left: 0px;}
+}
+
+
+
+/* A4 Stylings */
+
+.A4 {
+  width: 21cm;
+  height: 29.7cm;
+  border: 1px solid #ddd;
+  padding: 1cm;
+  margin: 0 auto;
+  line-height: 1.5em;
+  overflow: hidden;
+}
+
+.A4 h4{
+  padding: 10px 30px 15px;
+  margin-left: -1.5cm;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+.personal-details{
+  font-size: 1em;
+}
+#profile-img{
+  width: 200px;
+  height: 200px;
+  background-size: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  background-repeat: no-repeat;
+}
+.male{
+  background-image:url("../img/man.png")!important;
+}
+.female{
+  background-image:url("../img/women.png")!important;
+}
+.user{
+  background: url("../img/user.png");
+}
