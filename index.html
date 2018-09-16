@@ -29,7 +29,7 @@
     </div>
     <div class="section" ng-controller="mainCtrl">
         <div class="row">
-            <div class="col s4">
+            <div class="col s12 m4 l4 sidepanel">
                 <form>
                     <ul class="collapsible expandable">
                         <li class="active">
@@ -43,25 +43,14 @@
                                         <label class="active" for="full_name">Full Name</label>
                                         </input>
                                     </div>
-                                    <div class="col l4 m12">
+                                    <div class="col m12">
                                         <input class="datepicker" id="birthdate" ng-model="u_dob" placeholder="Date of Birth"
                                             type="text">
                                         </input>
                                     </div>
-                                    <div class="col l4 m12">
-                                        <label>
-                                            <input class="with-gap" ng-model="u_sex" name="sex" type="radio" value="male" />
-                                            <span>Male</span>
-                                        </label>
-                                    </div>
-                                    <div class="col l4 m12">
-                                        <label>
-                                            <input class="with-gap" ng-model="u_sex" name="sex" type="radio" value="female" />
-                                            <span>Female</span>
-                                        </label>
-                                    </div>
                                     <div class="input-field col s12">
-                                        <textarea ng-bind="" class="materialize-textarea" ng-model="u_address" id="address"></textarea>
+                                        <textarea ng-bind="" class="materialize-textarea" onclick="getLoc(this)"
+                                            ng-model="u_address" id="address"></textarea>
                                         <label for="address">Address</label>
                                     </div>
                                     <div class="input-field col s12">
@@ -69,18 +58,34 @@
                                         <label for="email">Email</label>
                                         </input>
                                     </div>
-                                    <div class="input-field col s12 ">
-                                        <div class="file-field input-field">
-                                            <div class="btn indigo">
-                                                <span>Browse</span>
-                                                <input type="file" accept="image/*" />
-                                            </div>
-                                            <div class="file-path-wrapper">
-                                                <input class="file-path validate" type="text" placeholder="Upload Image" />
+                                    <div class="input-field col s12 valign-wrapper">
+                                        <input type="button" class="btn indigo modal-trigger right" href="#uploadPhotoModal"
+                                            value="Upload Photo">
+                                        <div id="uploadPhotoModal" class="modal">
+                                            <div class="modal-content container">
+                                                <h4 class="center">Upload Profile Picture</h4>
+                                                <div class="row">
+                                                    <div class="file-field input-field">
+                                                        <div class="btn indigo">
+                                                            <span>Browse</span>
+                                                            <input type="file" id="inputUploadProfile" accept="image/*" />
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                            <input class="file-path validate" type="text" placeholder="Upload Image" />
+                                                        </div>
+                                                    </div>
+                                                    <croppie ng-if="cropped.source" src="cropped.source" ng-model="cropped.image"
+                                                        options="{boundary:{width:200,height:200}}"></croppie>
+                                                    <div class="input-field col s6 right">
+                                                        <input class="btn right indigo modal-close" id="closeUploadPhoto"
+                                                            type="button" value="Done">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </li>
                         <li>
                             <div class="collapsible-header indigo white-text">
@@ -89,14 +94,21 @@
                             <div class="collapsible-body">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input class="autocomplete" id="autocomplete-company" type="text">
+                                        <input class="autocomplete" id="autocomplete-company" type="text" ng-model="CompanyInput">
                                         <label for="autocomplete-company">Company</label>
                                         </input>
                                     </div>
                                     <div class="input-field col s12">
-                                        <input class="autocomplete" id="autocomplete-position" type="text">
+                                        <input class="autocomplete" id="autocomplete-position" type="text" ng-model="DesignationInput">
                                         <label for="autocomplete-position">Designation</label>
                                         </input>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <textarea id="exp-summary" class="materialize-textarea" ng-model="CompanyExperienceInput"></textarea>
+                                        <label for="exp-summary">Experience Summary</label>
+                                    </div>
+                                    <div class="input-field col s6 right">
+                                        <input class="btn right indigo" id="addPro" type="button" value="Add" ng-click="ProQualAdd()">
                                     </div>
                                 </div>
                             </div>
@@ -108,14 +120,44 @@
                             <div class="collapsible-body">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <input class="autocomplete" id="autocomplete-school" type="text">
-                                        <label for="autocomplete-school">School</label>
+                                        <input class="autocomplete" id="autocomplete-school" ng-model="schoolInput"
+                                            type="text">
+                                        <label for="autocomplete-school">School/University</label>
                                         </input>
                                     </div>
                                     <div class="input-field col s12">
-                                        <input class="autocomplete" id="autocomplete-stream" type="text">
-                                        <label for="autocomplete-stream">Stream</label>
+                                        <textarea id="edu-summary" class="materialize-textarea" ng-model="SchoolExperienceInput"></textarea>
+                                        <label for="edu-summary">Activites/Socities</label>
+                                    </div>
+                                    <div class="input-field col s6 right">
+                                        <input class="btn right indigo" id="addEdu" type="button" value="Add" ng-click="EduQualAdd()">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header indigo white-text">
+                                <i class="material-icons">star_border</i> Skills
+                            </div>
+                            <div class="collapsible-body">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input class="autocomplete" id="autocomplete-skill" ng-model="skillInput" type="text">
+                                        <label for="autocomplete-skill">Skill</label>
                                         </input>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <select ng-model="skillLvlInput">
+                                            <option value="" disabled selected>Your Level</option>
+                                            <option value="Beginner">Beginner</option>
+                                            <option value="Intermidiate">Intermidiate</option>
+                                            <option value="Expert">Expert</option>
+                                        </select>
+                                        <label>Expertise Level</label>
+                                    </div>
+                                    <div class="input-field col s6 right">
+                                        <input class="btn right indigo" id="addSkill" type="button" value="Add"
+                                            ng-click="SkillAdd()">
                                     </div>
                                 </div>
                             </div>
@@ -123,36 +165,45 @@
                     </ul>
                 </form>
             </div>
-            <div class="col s8">
-                <div class="A4">
-                    <div class="col s8">
+            <div id="printable" class="col s12 m8 l8">
+                <div class="A4 row">
+                    <h4 class="blue-grey darken-4 white-text" ng-bind="u_full_name"></h4>
+                    <div class="col s5 sidebar">
                         <div class="personal-details">
-                            <h4 class="blue-grey darken-4 white-text" ng-bind="u_full_name"></h4>
-                            Date of Birth : {{u_dob}}
-                            <br>Address : {{u_address}}
-                            <br>Email : {{u_email}}
+                            <span><i class="material-icons">email</i> Email</span>
+                            {{u_email}}<br>
+                            <span><i class="material-icons">today</i> Date of Birth</span>
+                            {{u_dob}}<br>
+                            <span><i class="material-icons">location_on</i> Address</span>
+                            {{u_address}}<br>
+                            <span><i class="material-icons">stars</i> Key Skills</span>
+                            <ul type="square" class="browser-default" ng-repeat="x in keySkillList">
+                                <li>{{x.Skill}} - {{x.Level}}</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col s4">
-                        <div id="profile-img" class="responsive-img user" ng-class="u_sex" />
+
+                    <div class="col s7 qualifications">
+                        <img id="profile-img" ng-src="{{cropped.image}}" class="responsive-img user circle" ng-class="u_sex" />
+                        <div class="prof-qual-section">
+                            <h6>Professional Expereince</h6>
+                            <div ng-repeat="x in ProQualList">
+                                <p>
+                                    <b ng-bind="x.Company"></b> - <i ng-bind="x.Designation"></i>
+                                    <span ng-bind="x.Experience"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="edu-qual-section">
+                            <h6>Education Qualifications</h6>
+                            <div ng-repeat="x in EduQualList">
+                                <p>
+                                    <b ng-bind="x.School"></b>
+                                    <span ng-bind="x.EduSummary"></span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div id="themeModal" class="modal">
-            <div class="modal-content container">
-                <h4 class="center">Select the theme</h4>
-                <div class="row">
-                    No themes available right now.
-                </div>
-            </div>
-        </div>
-        <div id="aboutModal" class="modal">
-            <div class="modal-content container">
-                <h4 class="center">About Team Origin</h4>
-                <div class="row">
-                    Team Origin is team consisting with three software engineering undergrduates from University of
-                    Kelaniya.
                 </div>
             </div>
         </div>
