@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
     $('input#autocomplete-position').autocomplete({
         data: {
-            "SEO": null,
+            "CEO": null,
             "Manager": null,
             "Senior Software Engineer": null,
             "Junior Software Engineer": null,
