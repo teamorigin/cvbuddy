@@ -26,10 +26,12 @@
 
   * **Smart assistant** which provides user guidance throughout the process by giving different expressions according to user activities.
   * **Inputs with auto complete** which provide for school, company using set of pre-entered values. 
-  * **Interactive inputs** such as calender for entering date.
+  * **Interactive inputs** such as calender for entering date and auto generating address.
 
 # Let's meet team members
 
-  @hirushka
-  @Yasiru-kavishka
   @Nuwan94
+  
+   @Yasiru-kavishka
+   
+   @hirushka
