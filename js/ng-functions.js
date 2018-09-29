@@ -26,18 +26,26 @@ angular.module('myApp', ['angularCroppie']).controller('mainCtrl', function ($sc
     });
 
     $scope.SkillAdd = function () {
-
         if ($scope.skillInput == "" || $scope.skillLvlInput == "") {
             return;
         } else {
             $scope.keySkillList.push({
+                ID : $scope.id,
                 Skill: $scope.skillInput,
                 Level: $scope.skillLvlInput
             });
         }
         $scope.skillInput = "";
-        $scope.skillLvlInput = "";
+        $scope.id++;
     }
+
+    $scope.SkillRemove = function(t) {
+        var oldList = $scope.keySkillList;
+        $scope.keySkillList = [];
+        angular.forEach(oldList, function(x) {
+            if (x.ID!=t) $scope.keySkillList.push(x);
+        });
+    };
 
 
     $scope.EduQualAdd = function () {
@@ -45,12 +53,23 @@ angular.module('myApp', ['angularCroppie']).controller('mainCtrl', function ($sc
             return;
         } else {
             $scope.EduQualList.push({
+                ID : $scope.id,
                 School: $scope.schoolInput,
                 EduSummary: $scope.SchoolExperienceInput
             });
         }
         $scope.schoolInput = "";
         $scope.SchoolExperienceInput = "";
+        $scope.id++;
+    };
+
+    
+    $scope.EduRemove = function(t) {
+        var oldList = $scope.EduQualList;
+        $scope.EduQualList = [];
+        angular.forEach(oldList, function(x) {
+            if (x.ID!=t) $scope.EduQualList.push(x);
+        });
     };
 
     $scope.ProQualAdd = function () {
@@ -58,6 +77,7 @@ angular.module('myApp', ['angularCroppie']).controller('mainCtrl', function ($sc
             return;
         } else {
             $scope.ProQualList.push({
+                ID : $scope.id,
                 Company: $scope.CompanyInput,
                 Designation: $scope.DesignationInput,
                 Experience: $scope.CompanyExperienceInput
@@ -66,7 +86,15 @@ angular.module('myApp', ['angularCroppie']).controller('mainCtrl', function ($sc
         $scope.CompanyInput = "";
         $scope.DesignationInput = "";
         $scope.CompanyExperienceInput = "";
+        $scope.id++;
     };
 
+    $scope.ProRemove = function(t) {
+        var oldList = $scope.ProQualList;
+        $scope.ProQualList = [];
+        angular.forEach(oldList, function(x) {
+            if (x.ID!=t) $scope.ProQualList.push(x);
+        });
+    };
 
 });

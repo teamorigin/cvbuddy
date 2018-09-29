@@ -292,15 +292,26 @@ $(document).ready(function () {
             "Sussex College Kandy": null,
         },
     });
-    // $('input#autocomplete-stream').autocomplete({
-    //     data: {
-    //         "Physical Science": null,
-    //         "Bio Science": null,
-    //         "Information & Communication Technology": null,
-    //         "Art": null,
-    //         "Commerce": null,
-    //         "Bio Technology": null,
-    //         "Engineering Technology": null
-    //     },
-    // });
+    $('input#autocomplete-skill').autocomplete({
+        data: {
+            "Java": null,
+            "C++": null,
+            "C": null,
+            "C#": null,
+            "HTML": null,
+            "CSS": null,
+            "PHP": null,
+            "Javascript": null,
+            "ReactJS": null,
+            "AngualrJS": null,
+            "Angular 2+": null,
+            "Angular 4": null,
+            "Angular 6": null,
+            "VueJS": null,
+            "Bootstrap": null,
+            "MaterializeCSS": null,
+            "Foundation": null,
+
+        },
+    });
 });

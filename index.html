@@ -12,7 +12,7 @@
     <title>CVBuddy</title>
 </head>
 
-<body ng-app="myApp" ng-init="u_full_name='John Doe'">
+<body ng-app="myApp" ng-init="u_full_name='John Doe';id=0">
     <div class="char-back">
         <div class="eye left-eye"></div>
         <div class="eye right-eye"></div>
@@ -111,6 +111,12 @@
                                     <div class="input-field col s6 right">
                                         <input class="btn right indigo" id="addPro" type="button" value="Add" ng-click="ProQualAdd()">
                                     </div>
+                                    <div class="col s12">
+                                            <div class="chip" ng-repeat="x in ProQualList">
+                                                {{x.Company}} - {{x.Designation}}
+                                                <i class="close material-icons" ng-click="ProRemove(x.ID)" title="remove {{x.Company}}">close</i>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                         </li>
@@ -132,6 +138,12 @@
                                     </div>
                                     <div class="input-field col s6 right">
                                         <input class="btn right indigo" id="addEdu" type="button" value="Add" ng-click="EduQualAdd()">
+                                    </div>
+                                    <div class="col s12">
+                                        <div class="chip" ng-repeat="x in EduQualList">
+                                            {{x.School}}
+                                            <i class="close material-icons" ng-click="EduRemove(x.ID)" title="remove {{x.School}}">close</i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -159,6 +171,12 @@
                                     <div class="input-field col s6 right">
                                         <input class="btn right indigo" id="addSkill" type="button" value="Add"
                                             ng-click="SkillAdd()">
+                                    </div>
+                                    <div class="col s12">
+                                        <div class="chip" ng-repeat="x in keySkillList">
+                                            {{x.Skill}}
+                                            <i class="close material-icons" ng-click="SkillRemove(x.ID)" title="remove {{x.Skill}}">close</i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -222,4 +240,5 @@
 <script src="js/ng-functions.js"></script>
 <script src="js/location-finder.js"></script>
 <script src="js/printable.js"></script>
+
 </html>

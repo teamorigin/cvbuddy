@@ -185,6 +185,11 @@ body {
   min-height: 10cm;
 }
 
+.chip:hover {
+  background: #3f51b5;
+  color: #fff;
+  transition: .5s;
+}
 
 #profile-img {
   width: 4cm;
