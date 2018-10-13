@@ -400,7 +400,7 @@
  color:#6200ea !important
 }
 .indigo {
- background-image:linear-gradient(#3f51b5, #5972FF) !important
+ background-image:linear-gradient(0.25turn, #3f51b5, #5972FF) !important
 }
 .indigo-button {
     background-color:#3f51b5 !important
