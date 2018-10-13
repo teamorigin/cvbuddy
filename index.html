@@ -24,7 +24,7 @@
     </nav>
 
     <div class="fixed-action-btn print-btn" onclick="printPages('printable')">
-        <a class="btn-floating btn-large pink">
+        <a class="btn-floating btn-large cyan">
             <i class="large material-icons">print</i>
         </a>
     </div>
@@ -60,14 +60,14 @@
                                         </input>
                                     </div>
                                     <div class="input-field col s12 valign-wrapper">
-                                        <input type="button" class="btn indigo modal-trigger right" href="#uploadPhotoModal"
+                                        <input type="button" class="btn indigo-button modal-trigger right" href="#uploadPhotoModal"
                                             value="Upload Photo">
                                         <div id="uploadPhotoModal" class="modal">
                                             <div class="modal-content container">
                                                 <h4 class="center">Upload Profile Picture</h4>
                                                 <div class="row">
                                                     <div class="file-field input-field">
-                                                        <div class="btn indigo">
+                                                        <div class="btn indigo-button">
                                                             <span>Browse</span>
                                                             <input type="file" id="inputUploadProfile" accept="image/*" />
                                                         </div>
@@ -78,7 +78,7 @@
                                                     <croppie ng-if="cropped.source" src="cropped.source" ng-model="cropped.image"
                                                         options="{boundary:{width:200,height:200}}"></croppie>
                                                     <div class="input-field col s6 right">
-                                                        <input class="btn right indigo modal-close" id="closeUploadPhoto"
+                                                        <input class="btn right indigo-button modal-close" id="closeUploadPhoto"
                                                             type="button" value="Done">
                                                     </div>
                                                 </div>
@@ -109,7 +109,7 @@
                                         <label for="exp-summary">Experience Summary</label>
                                     </div>
                                     <div class="input-field col s6 right">
-                                        <input class="btn right indigo" id="addPro" type="button" value="Add" ng-click="ProQualAdd()">
+                                        <input class="btn right indigo-button" id="addPro" type="button" value="Add" ng-click="ProQualAdd()">
                                     </div>
                                     <div class="col s12">
                                             <div class="chip" ng-repeat="x in ProQualList">
@@ -137,7 +137,7 @@
                                         <label for="edu-summary">Activites/Socities</label>
                                     </div>
                                     <div class="input-field col s6 right">
-                                        <input class="btn right indigo" id="addEdu" type="button" value="Add" ng-click="EduQualAdd()">
+                                        <input class="btn right indigo-button" id="addEdu" type="button" value="Add" ng-click="EduQualAdd()">
                                     </div>
                                     <div class="col s12">
                                         <div class="chip" ng-repeat="x in EduQualList">
@@ -169,7 +169,7 @@
                                         <label>Expertise Level</label>
                                     </div>
                                     <div class="input-field col s6 right">
-                                        <input class="btn right indigo" id="addSkill" type="button" value="Add"
+                                        <input class="btn right indigo-button" id="addSkill" type="button" value="Add"
                                             ng-click="SkillAdd()">
                                     </div>
                                     <div class="col s12">
