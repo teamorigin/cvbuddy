@@ -4543,7 +4543,10 @@ button.btn-floating {
  line-height:1.5;
  padding:1rem;
  background-color:#fff;
- border-bottom:1px solid #ddd
+ border-bottom:1px solid #ddd;
+ font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+ font-weight:lighter;
+ letter-spacing:1.5px;
 }
 .collapsible-header i {
  width:2rem;
