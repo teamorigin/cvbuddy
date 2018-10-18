@@ -155,6 +155,7 @@ body {
   margin-left: -0.5cm;
   margin-top: .25cm;
   display: block;
+  font-weight:bold;
 }
 
 .personal-details span i {
