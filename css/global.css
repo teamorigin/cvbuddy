@@ -140,6 +140,8 @@ body {
   text-transform: uppercase;
   padding: 1cm 6cm;
   text-align: center;
+  font-weight: lighter;
+  letter-spacing: 2px;
 }
 
 .personal-details {
