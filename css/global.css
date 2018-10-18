@@ -141,7 +141,7 @@ body {
   padding: 1cm 6cm;
   text-align: center;
   font-weight: lighter;
-  letter-spacing: 2px;
+  letter-spacing: 2px; 
 }
 
 .personal-details {
@@ -152,7 +152,6 @@ body {
 }
 
 .personal-details span {
-  font-weight: bold;
   margin-left: -0.5cm;
   margin-top: .25cm;
   display: block;
@@ -172,8 +171,6 @@ body {
 
 .qualifications h6 {
   text-transform: uppercase;
-  font-weight: bold;
-  text-decoration: underline;
 }
 
 .qualifications p span {
